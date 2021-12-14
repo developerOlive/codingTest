@@ -3,14 +3,21 @@ import java.util.Set;
 
 public class UniqueEmailAddress {
     /*
+
+    문제) 모든 유효한 이메일은 @을 기준으로 로컬 네임과 도메인 네임으로 구성된다.
+    또한 소문자 외에 하나 이상의 '.' 또는 '+'이 포함될 수 있다.
+    로컬 이름에 더하기('+')를 추가하면, 첫번째 더하기 기호 뒤에 모든 항목이 무시된다.
+    이메일 목록이 주어지면, 목록의 각 주소로 하나의 이메일을 보낸다. 실제로 받는 이메일의 주소는?
+
+    [ 문제 분석 ]
     1. 로컬 네임 + 도메인 네임
     2. 로컬네임에서 .은 무시한다
     3. 로컬네임에서 + 이후로 나오는 문자열은 무시한다
     4. 도메인 네임에서 .이 들어가면 고유하다
 
     [ 규칙 찾기 ]
-    1. . => Continue로 뺀다
-    2. + => break로 뺀다
+    1. 로컬 네임에서 . => Continue로 뺀다
+    2. 로컬 네임에서 + => break로 뺀다
     3. Set<String>
      */
     public static void main(String[] args) {
@@ -23,7 +30,7 @@ public class UniqueEmailAddress {
                 "testemail+tom@cod.ing.com",
                 "a@coding.com"
         };
-        
+
         System.out.println(uniqueEmailAddress.solve_1(emails));
         System.out.println(uniqueEmailAddress.solve_split(emails));
     }
