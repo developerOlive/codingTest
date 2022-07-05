@@ -32,12 +32,29 @@ public class AthletesWhoDidNotFinish {
     public static void main(String[] args) {
         String[] participant = {"leo", "kiki", "eden"};
         String[] completion = {"eden", "kiki"};
-        AthletesWhoDidNotFinish athletesWhoDidNotFinish = new AthletesWhoDidNotFinish();
-        System.out.println(athletesWhoDidNotFinish.solution_with_hash(participant, completion));
+
+        AthletesWhoDidNotFinish sol = new AthletesWhoDidNotFinish();
+        System.out.println(sol.solution_with_hash_1(participant, completion));
     }
 
 
-    public String solution_with_hash(String[] participant, String[] completion) {
+    public String solution_with_hash_1(String[] participant, String[] completion) {
+        String answer = "";
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String player : participant) map.put(player, map.getOrDefault(player, 0) + 1);
+        for (String player : completion) map.put(player, map.get(player) - 1);
+
+        for (String key : map.keySet()) {
+            if (map.get(key) != 0) {
+                answer = key;
+            }
+        }
+
+        return answer;
+    }
+
+
+    public String solution_with_hash_2(String[] participant, String[] completion) {
 
         String answer = "";
 
@@ -77,6 +94,7 @@ public class AthletesWhoDidNotFinish {
         return answer;
     }
 
+    
     public String solve_with_sorting(String[] participant, String[] completion) {
 
         // 1. sorting
