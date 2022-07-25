@@ -1,4 +1,4 @@
-package Hash;
+package Hackerrank_problem;
 
 public class StringReverse {
 
