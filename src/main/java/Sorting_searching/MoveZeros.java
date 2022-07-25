@@ -1,5 +1,7 @@
 package Sorting_searching;
 
+import java.util.Arrays;
+
 public class MoveZeros {
 
     /*
@@ -45,8 +47,6 @@ public class MoveZeros {
             index++;
         }
 
-        for (int i: nums) {
-            System.out.println("i : " + i);
-        }
+        System.out.println(Arrays.toString(Arrays.stream(nums).toArray()));
     }
 }
