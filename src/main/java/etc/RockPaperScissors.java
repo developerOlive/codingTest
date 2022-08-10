@@ -10,7 +10,7 @@ public class RockPaperScissors {
     2 for a win (rock beats scissors, scissors beat paper and paper beats rock),
     1 for a tie (when both players show the same gesture) and 0 for a loss.
 
-    Franco watns to surprise Giovanni by using a very simple startegy:
+    Franco wants to surprise Giovanni by using a very simple strategy:
     he will make the same gesture in every turn throughout the game.
     what is the maximum number of points he can score using this strategy?
 
@@ -26,6 +26,8 @@ public class RockPaperScissors {
 
     public int solution(String G) {
 
+        long start = System.currentTimeMillis();
+
         char[] chars = G.toCharArray();
         char[] rps = {'R', 'P', 'S'};
 
@@ -36,37 +38,38 @@ public class RockPaperScissors {
         for (char i : rps) {
             switch (i) {
                 case 'R':
-                    for (int j = 0; j < chars.length; j++) {
-                        if (chars[j] == 'R') {
+                    for (char aChar : chars) {
+                        if (aChar == 'R') {
                             rockWin += 1;
                         }
-                        if (chars[j] == 'S') {
+                        if (aChar == 'S') {
                             rockWin += 2;
                         }
                     }
 
                 case 'P':
-                    for (int j = 0; j < chars.length; j++) {
-                        if (chars[j] == 'P') {
+                    for (char aChar : chars) {
+                        if (aChar == 'P') {
                             paperWin += 1;
-                        } else if (chars[j] == 'R') {
+                        } else if (aChar == 'R') {
                             paperWin += 2;
                         }
                     }
 
                 case 'S':
-                    for (int j = 0; j < chars.length; j++) {
-                        if (chars[j] == 'S') {
+                    for (char aChar : chars) {
+                        if (aChar == 'S') {
                             scissorsWin += 1;
-                        } else if (chars[j] == 'P') {
+                        } else if (aChar == 'P') {
                             scissorsWin += 2;
                         }
                     }
             }
-
+            long end = System.currentTimeMillis();
+            System.out.println((end - start)/1000.0);
             return Math.max(rockWin, Math.max(paperWin, scissorsWin));
         }
 
-        return Math.max(rockWin, Math.max(paperWin, scissorsWin));
+        return 0;
     }
 }
