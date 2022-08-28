@@ -1,4 +1,4 @@
-package ignore;
+package etc;
 
 public class Potholes {
 
