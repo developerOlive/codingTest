@@ -28,17 +28,19 @@ public class Budget {
         int answer = 0;
         Arrays.sort(d);
 
-        for (int i=0; i<d.length; i++) {
+        for (int i = 0; i < d.length; i++) {
             budget -= d[i];
-            if (budget < 0) { break; }
-            answer ++;
+            if (budget < 0) {
+                break;
+            }
+            answer++;
         }
 
         return answer;
     }
 
     public static void main(String[] args) {
-        int[] d = {1,3,2,5,4};
+        int[] d = {1, 3, 2, 5, 4};
         int budget = 9;
 
         System.out.println(solve_with_sorting(d, budget));

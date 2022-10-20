@@ -22,7 +22,7 @@ public class BaseballGame {
 
      */
     public static void main(String[] args) {
-        String[] strs = {"5","-2","4","C","D","9","+","+"};
+        String[] strs = {"5", "-2", "4", "C", "D", "9", "+", "+"};
         System.out.println(points(strs));
     }
 
@@ -31,22 +31,22 @@ public class BaseballGame {
         Stack<Integer> stack = new Stack<>();
 
         // 2. 데이터를 뽑아낸다. with for
-        for(String operation : strs) {
+        for (String operation : strs) {
             switch (operation) {
-                case "C" : // 앞에 것 삭제
+                case "C": // 앞에 것 삭제
                     stack.pop();
                     break;
-                case "D" : // 앞에 것을 뽑아 2배로 만든 후 스택에 넣음
+                case "D": // 앞에 것을 뽑아 2배로 만든 후 스택에 넣음
                     stack.push(stack.peek() * 2);
                     break;
-                case "+" :
+                case "+":
                     int x = stack.pop();
                     int y = stack.pop();
                     stack.push(y);
                     stack.push(x);
-                    stack.push(x+y);
+                    stack.push(x + y);
                     break;
-                default :
+                default:
                     stack.push(Integer.valueOf(operation));
             }
         }

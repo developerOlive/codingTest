@@ -91,7 +91,7 @@ public class GetReportResult {
 
         List<String> list = Arrays.stream(report).distinct().collect(Collectors.toList());
         HashMap<String, Integer> count = new HashMap<>();
-        for(String s : list) {
+        for (String s : list) {
             String target = s.split(" ")[1];
             count.put(target, count.getOrDefault(target, 0) + 1);
         }

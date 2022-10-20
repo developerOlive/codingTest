@@ -65,8 +65,8 @@ public class Potholes {
             }
 
             int repairX = Math.min((tmp1 - tmp2 + lane2X), (tmp2 - tmp1 + lane1X))
-                         + (L1arr[i] == 'x' ? 1 : 0)
-                         + (L2arr[i] == 'x' ? 1 : 0);
+                    + (L1arr[i] == 'x' ? 1 : 0)
+                    + (L2arr[i] == 'x' ? 1 : 0);
 
             min = Math.min(lane1X, Math.min(lane2X, Math.min(min, repairX)));
         }

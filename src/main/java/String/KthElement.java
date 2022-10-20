@@ -39,11 +39,11 @@ public class KthElement {
             // original_array - 복사할 원본 배열 (arr)
             // from_index - 원본 배열에서 복사할 범위의 시작 인덱스
             // to_index - 원본 배열에서 복사할 범위의 끝 인덱스
-            int[] temp = Arrays.copyOfRange(array, i-1, j);
+            int[] temp = Arrays.copyOfRange(array, i - 1, j);
 
             Arrays.sort(temp);
 
-            answer[index] = temp[k-1];
+            answer[index] = temp[k - 1];
 
             index++;
         }

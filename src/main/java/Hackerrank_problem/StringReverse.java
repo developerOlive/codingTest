@@ -18,8 +18,8 @@ public class StringReverse {
     Yes
      */
     public String solution(String str) {
-        for (int i=0; i<str.length()/2; i++) {
-            if (str.charAt(i) == str.charAt(str.length() -i - 1)) {
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) == str.charAt(str.length() - i - 1)) {
                 continue;
             } else {
                 return "No";

@@ -62,11 +62,11 @@ public class HardDiskStatistics {
 
         String[] files = S.split("\n");
 
-        for (int i=0; i<files.length; i++) {
+        for (int i = 0; i < files.length; i++) {
 
             String hardDisk = files[i].substring(
                     files[i].lastIndexOf(".") + 1,
-                    files[i].length() -1);
+                    files[i].length() - 1);
 
             String[] eachFile = hardDisk.split(" ");
 

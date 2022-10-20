@@ -24,7 +24,7 @@ public class NumericStringsAndEnglishWords {
     public int solution(String s) {
         String[] stringArray = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-        for (int i=0; i<stringArray.length; i++) {
+        for (int i = 0; i < stringArray.length; i++) {
             s = s.replaceAll(stringArray[i], Integer.toString(i));
         }
 
@@ -34,7 +34,7 @@ public class NumericStringsAndEnglishWords {
     public static void main(String[] args) {
         NumericStringsAndEnglishWords sol = new NumericStringsAndEnglishWords();
         String s = "one4seveneight";
-        
+
         System.out.println(sol.solution(s));
     }
 }

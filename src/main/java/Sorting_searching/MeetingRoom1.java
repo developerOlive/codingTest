@@ -54,7 +54,7 @@ public class MeetingRoom1 {
 
         // 2. for
         int preEndTime = intervals[0][1]; // 이전 배열의 endTime 시간
-        for (int i=1; i<intervals.length; i++) {
+        for (int i = 1; i < intervals.length; i++) {
             // 앞전 회의실이 끝나는 시간과, 그 다음에 시작하려는 회의 시간을 비교하는 부분
             // (예) 앞전 회의실이 끝나는 시간이 30분이고, 내가 시작하려는 시간이 5분이면 사용 불가
             if (intervals[i][0] < preEndTime) {
@@ -67,8 +67,8 @@ public class MeetingRoom1 {
     }
 
     private void print(int[][] grid) {
-        for (int i=0; i<grid.length; i++) {
-            for (int j=0; j<grid[0].length; j++) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
                 System.out.println(grid[i][j] + "\t");
             }
             System.out.println();

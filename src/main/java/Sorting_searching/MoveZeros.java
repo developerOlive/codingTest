@@ -27,22 +27,22 @@ public class MoveZeros {
 
     public static void main(String[] args) {
 
-        int[] nums = { 0, 3, 2, 0, 8, 5 };
+        int[] nums = {0, 3, 2, 0, 8, 5};
         int index = 0;
 
         int n = nums.length; // 6
 
         // 3, 2, 8, 5 먼저 배열에 저장
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             if (nums[i] != 0) {
                 nums[index] = nums[i];
                 index++;
             }
         }
-        System.out.println("index : " + index );
+        System.out.println("index : " + index);
 
         // 3, 2, 8, 5, 0, 0 까지 배열에 저장
-        while(index < n) {
+        while (index < n) {
             nums[index] = 0;
             index++;
         }

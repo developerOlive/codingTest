@@ -45,7 +45,7 @@ public class Camouflage {
             String type = cloth[1];
             map.put(type, map.getOrDefault(type, 0) + 1);
         }
-        System.out.println("귱굼 : "  + map.toString());
+        System.out.println("귱굼 : " + map.toString());
 
         // 2. 입지 않는 경우 추가 - 종류별로 하나씩 입지 않아도 되니, 입지 않아도 되는 경우를 추가한다.
         Iterator<Integer> it = map.values().iterator();

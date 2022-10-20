@@ -32,7 +32,7 @@ public class KthLargestElementInAnArray {
     public static void main(String[] args) {
         KthLargestElementInAnArray a = new KthLargestElementInAnArray();
 
-        int[] nums = { 2, 3, 1, 5, 6, 4};
+        int[] nums = {2, 3, 1, 5, 6, 4};
         int k = 2;
         System.out.println(a.solve(nums, k));
         System.out.println(a.solve_pq_asc(nums, k));
@@ -43,7 +43,7 @@ public class KthLargestElementInAnArray {
         Arrays.sort(nums); // 1, 2, 3, 4, 5, 6
         int n = nums.length; // 6
 
-        return nums[n-k]; // 1, 2, 3, 4, 5, 6 중 | 4번방
+        return nums[n - k]; // 1, 2, 3, 4, 5, 6 중 | 4번방
     }
 
 
@@ -54,7 +54,7 @@ public class KthLargestElementInAnArray {
      */
 
     // ======================== 오름차순으로 푸는 경우 ========================
-    public int solve_pq_asc (int[] nums, int k) {
+    public int solve_pq_asc(int[] nums, int k) {
 
         // 1. asc(오름차순), minHeap (작은 값이 맨 위에)
         Queue<Integer> priorityQueue = new PriorityQueue<>();
@@ -79,17 +79,17 @@ public class KthLargestElementInAnArray {
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         // Priority Queue에 배열 원소들을 모두 넣는다.
-         for (int i=0; i<nums.length; i++) {
-             pq.offer(nums[i]);
-         }
+        for (int i = 0; i < nums.length; i++) {
+            pq.offer(nums[i]);
+        }
 
         // k개 꺼내서, 마지막으로 꺼낸 원소를 반환한다.
-         while (k > 0) {
-             answer = pq.poll();
-             System.out.println("answer : " + answer);
-             k--;
-         }
+        while (k > 0) {
+            answer = pq.poll();
+            System.out.println("answer : " + answer);
+            k--;
+        }
 
-         return answer;
+        return answer;
     }
 }

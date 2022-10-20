@@ -39,8 +39,8 @@ public class PhoneBookList {
         Arrays.sort(phone_book);
 
         // 2. 정렬 중 loop을 돌면서 앞번호가 뒷번호의 접두어인지 확인
-        for (int i=0; i<phone_book.length-1; i++)
-            if (phone_book[i+1].startsWith(phone_book[i]))
+        for (int i = 0; i < phone_book.length - 1; i++)
+            if (phone_book[i + 1].startsWith(phone_book[i]))
                 return false;
 
         return true;
@@ -49,14 +49,14 @@ public class PhoneBookList {
     public boolean solution_with_hash(String[] phone_book) {
         // 1. hashMap을 만들고, 모든 전화번호를 hashMap에 넣는다.
         HashMap<String, Integer> map = new HashMap<>();
-        for (int i=0; i<phone_book.length; i++) {
+        for (int i = 0; i < phone_book.length; i++) {
             map.put(phone_book[i], 1); // key를 가지고 존재유무를 판단하기 때문에 value는 큰 의미가 없다.
         }
 
         // 2. 모든 전화번호의 접두어가 맵에 들어있는지 확인한다.
-        for (int i=0; i<phone_book.length; i++) {
-            for (int j=1; j<phone_book[i].length(); j++) {
-                if (map.containsKey(phone_book[i].substring(0,j))) {
+        for (int i = 0; i < phone_book.length; i++) {
+            for (int j = 1; j < phone_book[i].length(); j++) {
+                if (map.containsKey(phone_book[i].substring(0, j))) {
 
                     return false;
                 }

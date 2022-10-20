@@ -39,8 +39,8 @@ public class LicenseKeyFormatting {
         // 3. k개로 파싱하기, 그리고 - 넣기
         StringBuilder sb = new StringBuilder(newStr);
         int length = sb.length();
-        for (int i=k; i<length; i=i+k) {
-            sb.insert(length-i, '-');
+        for (int i = k; i < length; i = i + k) {
+            sb.insert(length - i, '-');
         }
         return sb.toString();
     }

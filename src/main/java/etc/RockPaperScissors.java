@@ -69,7 +69,7 @@ public class RockPaperScissors {
             }
             int result = Math.max(rockWin, Math.max(paperWin, scissorsWin));
             long end = System.currentTimeMillis();
-            System.out.println((end - start)/1000.0);
+            System.out.println((end - start) / 1000.0);
             return result;
 
         }

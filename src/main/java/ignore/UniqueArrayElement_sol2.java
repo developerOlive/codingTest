@@ -19,7 +19,7 @@ public class UniqueArrayElement_sol2 {
      */
 
     public static void main(String[] args) {
-        int[] A = {2,1,4,4};
+        int[] A = {2, 1, 4, 4};
         UniqueArrayElement_sol2 sol = new UniqueArrayElement_sol2();
         System.out.println(sol.solution(A));
     }
@@ -46,7 +46,7 @@ public class UniqueArrayElement_sol2 {
             index += 1;
         }
         long end = System.currentTimeMillis();
-        System.out.println((end - start)/1000.0);
+        System.out.println((end - start) / 1000.0);
         return result;
     }
 }

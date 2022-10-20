@@ -1,8 +1,106 @@
-UniqueEmailAddress.java
- UniqueEmailAddress
-LicenseKeyFormatting.java
- LicenseKeyFormatting
-JewelsAndStones.java
- JewelsAndStones
-PlusOne.java
- PlusOne
+Array/MaximumSubarray.java
+ Array.MaximumSubarray
+Array/NotLikeSameNumber.java
+ Array.NotLikeSameNumber
+QueueAndStack/FunctionDevelopment.java
+ QueueAndStack.FunctionDevelopment
+Sorting_searching/KthLargestElementInAnArray.java
+ Sorting_searching.KthLargestElementInAnArray
+Array/FindKim.java
+ Array.FindKim
+Class/KeypadPress.java
+ Class.KeypadPress
+ Class.KeypadPress$Position
+String/UniqueEmailAddress.java
+ String.UniqueEmailAddress
+Array/DailyTemperature.java
+ Array.DailyTemperature
+etc/Ponketmon.java
+ etc.Ponketmon
+String/PlusOne.java
+ String.PlusOne
+Hash/GetReportResult.java
+ Hash.GetReportResult
+ignore/UniqueArrayElement_sol1.java
+ ignore.UniqueArrayElement_sol1
+QueueAndStack/BaseballGame.java
+ QueueAndStack.BaseballGame
+etc/RockPaperScissors.java
+ etc.RockPaperScissors
+Array/GroupAnagrams.java
+ Array.GroupAnagrams
+etc/NumberAndAdditionOfFactors.java
+ etc.NumberAndAdditionOfFactors
+Basic.java
+ Basic
+Hackerrank_problem/StringReverse.java
+ Hackerrank_problem.StringReverse
+Sorting_searching/PhoneBookList.java
+ Sorting_searching.PhoneBookList
+etc/AddPlusAndMinus.java
+ etc.AddPlusAndMinus
+etc/Potholes.java
+ etc.Potholes
+String/HardDiskStatistics.java
+ String.HardDiskStatistics
+ignore/UniqueArrayElement_sol2.java
+ ignore.UniqueArrayElement_sol2
+Sorting_searching/Budget.java
+ Sorting_searching.Budget
+codility_problem/FirstUnique.java
+ codility_problem.FirstUnique
+String/NumericStringsAndEnglishWords.java
+ String.NumericStringsAndEnglishWords
+Sorting_searching/plusAscAndDesc.java
+ Sorting_searching.plusAscAndDesc
+Array/TrappingRainWater.java
+ Array.TrappingRainWater
+Array/HideCellPhoneNum.java
+ Array.HideCellPhoneNum
+Sorting_searching/MeetingRoom1.java
+ Sorting_searching.MeetingRoom1
+etc/AddMissingNumbers.java
+ etc.AddMissingNumbers
+String/NewIdSuggestion.java
+ String.NewIdSuggestion
+ String.NewIdSuggestion$KAKAOID
+Hash/TakeTwoAndAdd.java
+ Hash.TakeTwoAndAdd
+String/Powers.java
+ String.Powers
+String/JewelsAndStones.java
+ String.JewelsAndStones
+String/KthElement.java
+ String.KthElement
+Hash/AthletesWhoDidNotFinish.java
+ Hash.AthletesWhoDidNotFinish
+etc/CranePuppetDraw.java
+ etc.CranePuppetDraw
+Sorting_searching/MeetingRoom2.java
+ Sorting_searching.MeetingRoom2
+Hash/GymSuit.java
+ Hash.GymSuit
+etc/FailureRate.java
+ etc.FailureRate
+Hash/FindDecimals1.java
+ Hash.FindDecimals1
+Class/FunctionDevelopment.java
+ Class.FunctionDevelopment
+etc/Year2016.java
+ etc.Year2016
+etc/CalculateTheShortfall.java
+ etc.CalculateTheShortfall
+Sorting_searching/MoveZeros.java
+ Sorting_searching.MoveZeros
+codility_problem/MissingInteger.java
+ codility_problem.MissingInteger
+etc/Supoja.java
+ etc.Supoja
+Hash/Camouflage.java
+ Hash.Camouflage
+String/LicenseKeyFormatting.java
+ String.LicenseKeyFormatting
+Array/TwoSum.java
+ Array.TwoSum
+etc/MakeDecimal.java
+ etc.MakeDecimal

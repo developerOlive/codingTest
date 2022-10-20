@@ -94,7 +94,7 @@ public class AthletesWhoDidNotFinish {
         return answer;
     }
 
-    
+
     public String solve_with_sorting(String[] participant, String[] completion) {
 
         // 1. sorting

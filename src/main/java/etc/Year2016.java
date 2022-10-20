@@ -16,7 +16,7 @@ public class Year2016 {
      */
 
     public static String solution(int a, int b) {
-        return LocalDate.of(2016, a, b).getDayOfWeek().toString().substring(0,3);
+        return LocalDate.of(2016, a, b).getDayOfWeek().toString().substring(0, 3);
     }
 
     public static void main(String[] args) {
@@ -24,10 +24,10 @@ public class Year2016 {
         int a = 5;
         int b = 24;
 
-        System.out.println(solution(a,b));
+        System.out.println(solution(a, b));
 
         // ================================
-        System.out.println(LocalDate.of(2022,07,11));
+        System.out.println(LocalDate.of(2022, 07, 11));
         System.out.println(LocalDate.of(2022, 07, 11).getDayOfWeek());
     }
 }
