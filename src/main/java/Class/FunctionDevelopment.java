@@ -19,15 +19,84 @@ public class FunctionDevelopment {
     각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.
      */
 
+    int progressesCount;
+    int[] needDays;
+    ArrayList<Integer> workCountStorage;
+
+    public int[] solution(int[] progresses, int[] speeds) {
+
+        // 초기화
+        progressesCount = progresses.length;
+        needDays = new int[progressesCount];
+        workCountStorage = new ArrayList<>();
+
+
+        // 필요한 작업일 계산
+        this.calcNeedDays(progresses, speeds);
+        this.viewAll(needDays, 0);
+
+        // 동시에 진행된 프로세스 계산
+        for (int step = 0; step < progressesCount; ) {
+            int stepNeedDay = needDays[step];
+
+            // 날짜 동시에 경과
+            for (int remainStep = step; remainStep < progressesCount; remainStep++) {
+                needDays[remainStep] -= stepNeedDay;
+            }
+            this.viewAll(needDays, step);
+
+            // 완료한 작업까지의 갯수
+            int workCount = 1;
+            for (; step + workCount < progressesCount; workCount++) {
+                if (needDays[step + workCount] > 0) {
+                    break;
+                }
+            }
+            System.out.println("workCount:" + workCount);
+
+            // 완료한 작업 갯수 저장
+            workCountStorage.add(workCount);
+
+            // 작업 갯수만큼 step 증가
+            step += workCount;
+        }
+
+        return FunctionDevelopment.convertIntegers(workCountStorage);
+    }
+
+    private void calcNeedDays(int[] progresses, int[] speeds) {
+        for (int i = 0; i < progressesCount; i++) {
+            double remainProgress = 100 - progresses[i];
+            double fNeedDay = remainProgress / speeds[i];
+
+            needDays[i] = (int) Math.ceil(fNeedDay);
+        }
+    }
+
+    public static int[] convertIntegers(ArrayList<Integer> integers) {
+        int size = integers.size();
+        int[] ret = new int[size];
+        for (int i = 0; i < size; i++) {
+            ret[i] = integers.get(i);
+        }
+        return ret;
+    }
+
+    private void viewAll(int[] array, int startIdx) {
+        System.out.print("viewAll:");
+
+        int arrayCount = array.length;
+        for (int i = startIdx; i < arrayCount; i++) {
+            System.out.print(array[i] + ",");
+        }
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-        QueueAndStack.FunctionDevelopment sol = new QueueAndStack.FunctionDevelopment();
+        FunctionDevelopment sol = new FunctionDevelopment();
         int[] progresses = {93, 30, 55};
         int[] speeds = {1, 30, 5};
         System.out.println(Arrays.toString(sol.solution(progresses, speeds)));
     }
-
-    int progressCount;
-    int[] needDays;
-
-    ArrayList<Integer> workCountStorage;
 }
