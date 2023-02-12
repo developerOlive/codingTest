@@ -1,6 +1,6 @@
 package programmers_basic;
 
-public class CursedNumberThree {
+public class 저주의숫자3 {
 
     /*
     (문제)
@@ -9,7 +9,7 @@ public class CursedNumberThree {
      */
 
     public static void main(String[] args) {
-        CursedNumberThree sol = new CursedNumberThree();
+        저주의숫자3 sol = new 저주의숫자3();
         System.out.println(sol.solution(5));
     }
 

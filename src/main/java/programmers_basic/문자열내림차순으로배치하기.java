@@ -2,7 +2,7 @@ package programmers_basic;
 
 import java.util.Arrays;
 
-public class ArrangeStringInDescendingOrder {
+public class 문자열내림차순으로배치하기 {
 
     /*
     (문제)
@@ -32,7 +32,7 @@ public class ArrangeStringInDescendingOrder {
     }
 
     public static void main(String[] args) {
-        ArrangeStringInDescendingOrder sol = new ArrangeStringInDescendingOrder();
+        문자열내림차순으로배치하기 sol = new 문자열내림차순으로배치하기();
         String s = "Zbcdefg";
         System.out.println(sol.solution2(s));
     }
