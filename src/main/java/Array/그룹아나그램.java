@@ -2,7 +2,7 @@ package Array;
 
 import java.util.*;
 
-public class GroupAnagrams {
+public class 그룹아나그램 {
 
     /*
     (문제)

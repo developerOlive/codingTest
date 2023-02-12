@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Stack;
 
-public class DailyTemperature {
+public class 일일온도 {
 
     /*
     (문제)

@@ -3,7 +3,7 @@ package Array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+public class 투썸 {
 
     /*
     (문제)
@@ -29,7 +29,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        TwoSum twoSum = new TwoSum();
+        투썸 twoSum = new 투썸();
         int[] nums = {2, 8, 11, 14};
         int target = 16;
 

@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Arrays;
 
-public class FruitVendor {
+public class 과일장수 {
     /*
     (문제)
     https://school.programmers.co.kr/learn/courses/30/lessons/135808
@@ -25,7 +25,7 @@ public class FruitVendor {
      */
 
     public static void main(String[] args) {
-        FruitVendor sol = new FruitVendor();
+        과일장수 sol = new 과일장수();
         int k = 3;
         int m = 4;
         int[] score = {1,2,3,1,2,3,1};

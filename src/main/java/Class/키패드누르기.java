@@ -1,6 +1,6 @@
 package Class;
 
-public class KeypadPress {
+public class 키패드누르기 {
 
     /*
     (문제) 키패드 누르기 - 프로그래머스
@@ -148,7 +148,7 @@ public class KeypadPress {
 
 
     public static void main(String[] args) {
-        KeypadPress sol = new KeypadPress();
+        키패드누르기 sol = new 키패드누르기();
         int[] numbers = {1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};
         String hand = "right";
         System.out.println(sol.solution_with_class(numbers, hand));

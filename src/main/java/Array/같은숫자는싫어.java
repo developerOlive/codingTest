@@ -3,7 +3,7 @@ package Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class NotLikeSameNumber {
+public class 같은숫자는싫어 {
 
     /*
     (문제)
@@ -19,7 +19,7 @@ public class NotLikeSameNumber {
     */
 
     public static void main(String[] args) {
-        NotLikeSameNumber sol = new NotLikeSameNumber();
+        같은숫자는싫어 sol = new 같은숫자는싫어();
         int[] arr = {4, 4, 4, 3, 3};
         System.out.println(Arrays.toString(sol.solution(arr)));
     }

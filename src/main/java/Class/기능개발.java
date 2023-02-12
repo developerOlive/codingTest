@@ -3,7 +3,7 @@ package Class;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class FunctionDevelopment {
+public class 기능개발 {
 
     /*
     (문제)
@@ -61,7 +61,7 @@ public class FunctionDevelopment {
             step += workCount;
         }
 
-        return FunctionDevelopment.convertIntegers(workCountStorage);
+        return 기능개발.convertIntegers(workCountStorage);
     }
 
     private void calcNeedDays(int[] progresses, int[] speeds) {
@@ -94,7 +94,7 @@ public class FunctionDevelopment {
     }
 
     public static void main(String[] args) {
-        FunctionDevelopment sol = new FunctionDevelopment();
+        기능개발 sol = new 기능개발();
         int[] progresses = {93, 30, 55};
         int[] speeds = {1, 30, 5};
         System.out.println(Arrays.toString(sol.solution(progresses, speeds)));

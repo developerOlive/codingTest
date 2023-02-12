@@ -2,7 +2,7 @@ package Array;
 
 import java.util.Arrays;
 
-public class NumbersSpacedByX {
+public class x만큼간격이있는n개의숫자 {
 
     /*
     (문제)
@@ -15,7 +15,7 @@ public class NumbersSpacedByX {
      */
 
     public static void main(String[] args) {
-        NumbersSpacedByX sol = new NumbersSpacedByX();
+        x만큼간격이있는n개의숫자 sol = new x만큼간격이있는n개의숫자();
         int x = 2;
         int n = 5;
         System.out.println(Arrays.toString(sol.solution(x, n)));

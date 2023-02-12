@@ -1,6 +1,6 @@
 package Array;
 
-public class HideCellPhoneNum {
+public class 핸드폰번호가리기 {
 
     /*
     (문제)
@@ -14,7 +14,7 @@ public class HideCellPhoneNum {
      */
 
     public static void main(String[] args) {
-        HideCellPhoneNum sol = new HideCellPhoneNum();
+        핸드폰번호가리기 sol = new 핸드폰번호가리기();
         System.out.println(sol.solution("01033334444"));
     }
 

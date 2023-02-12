@@ -2,7 +2,7 @@ package Array;
 
 import java.util.*;
 
-public class PersonalInformationValidityPeriod {
+public class 개인정보수집유효기간 {
 
     /*
     (문제)
@@ -53,7 +53,7 @@ public class PersonalInformationValidityPeriod {
         String[] terms = {"A 6", "B 12", "C 3"};
         String[] privacies = {"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"};
 
-        PersonalInformationValidityPeriod sol = new PersonalInformationValidityPeriod();
+        개인정보수집유효기간 sol = new 개인정보수집유효기간();
         System.out.println(Arrays.toString(sol.solution(today, terms, privacies)));
     }
 }
