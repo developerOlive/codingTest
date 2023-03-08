@@ -42,70 +42,19 @@ public class GetReportResult {
         }
     }
 
-    public int[] solve_with_hash(String[] id_list, String[] report, int k) {
-        int[] answer = new int[id_list.length];
+    public static int[] solution(String[] idList, String[] report, int k) {
 
-        // 1. 중복제거 - report 배열의 정보를 hashSet으로 옮겨서 중복을 제거
-        HashSet<String> reportSet = new HashSet<>(Arrays.asList(report));
+        List<String> reportList = Arrays.stream(report).distinct().collect(Collectors.toList());
+        HashMap<String, Integer> reportedCount = new HashMap<>(); // <신고당한 사람, 신고당한 횟수>
 
-
-        // 2. 신고자 목록 관리 - hash로 각 사용자를 신고한 사람들의 목록을 관리한다.
-        // (ex) key (신고 당한사람)  | value (신고 결과를 받는 사람 = 신고한 사람)
-        //      frodo             | <muzi, apeach>
-        //      neo               | <frodo, muzi>
-        //      muzi              | <apeach>
-        HashMap<String, ArrayList<String>> notifyListHash = new HashMap<>();
-
-        for (String rep : reportSet) {
-            int blankIndex = rep.indexOf(" ");
-            String reporter = rep.substring(0, blankIndex);
-            String reportee = rep.substring(blankIndex + 1);
-
-            ArrayList<String> reporterList = notifyListHash.getOrDefault(reportee, null);
-            if (reporterList == null) {
-                reporterList = new ArrayList<>();
-            }
-
-            reporterList.add(reporter);
-            notifyListHash.put(reportee, reporterList);
+        for (String r : reportList) {
+            String reportedTarget = r.split(" ")[1];
+            reportedCount.put(reportedTarget, reportedCount.getOrDefault(reportedTarget, 0) + 1);
         }
 
-        // 3. 신고한 사용자 - 신고한 사용자에게 정지된 사용자를 알려주고, 이 정보를 hash로 관리
-        // (ex) key    | value
-        //      muzi   | 2
-        //      apeach | 1
-        //      frodo  | 1
-        HashMap<String, Integer> reporterHash = new HashMap<>();
-        for (ArrayList<String> notifyList : notifyListHash.values()) {
-            if (notifyList.size() >= k) {
-                for (String reporter : notifyList) {
-                    reporterHash.put(reporter, reporterHash.getOrDefault(reporter, 0) + 1);
-                }
-            }
-        }
-
-        for (int i = 0; i < id_list.length; i++) {
-            answer[i] = reporterHash.getOrDefault(id_list[i], 0);
-        }
-
-        return answer;
-    }
-
-
-    public int[] solve_with_streamAPI(String[] id_list, String[] report, int k) {
-
-        List<String> list = Arrays.stream(report).distinct().collect(Collectors.toList());
-        HashMap<String, Integer> count = new HashMap<>();
-        for (String s : list) {
-            String target = s.split(" ")[1];
-            count.put(target, count.getOrDefault(target, 0) + 1);
-        }
-
-        return Arrays.stream(id_list).map(_user -> {
-            final String user = _user;
-            List<String> reporterList = list.stream().filter(s -> s.startsWith(user + " ")).collect(Collectors.toList());
-            return reporterList.stream().filter(s -> count.getOrDefault(s.split(" ")[1], 0) >= k).count();
+        return Arrays.stream(idList).map(id -> {
+            List<String> reporterList = reportList.stream().filter(s -> s.startsWith(id + " ")).collect(Collectors.toList());
+            return reporterList.stream().filter(r -> reportedCount.getOrDefault(r.split(" ")[1], 0) >= k).count();
         }).mapToInt(Long::intValue).toArray();
-
     }
 }
