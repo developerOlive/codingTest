@@ -21,17 +21,21 @@ public class CloseCharacter {
     따라서 최종 결과물은 [-1, -1, -1, 2, 2, 2]가 됩니다.
     */
 
-    public int[] solution(String s) {
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(solution2("banana")));
+    }
+
+    public static int[] solution(String s) {
         int[] answer = new int[s.length()];
         HashMap<Character, Integer> map = new HashMap<>();
 
         for (int i=0; i<s.length(); i++) {
-            if (!map.containsKey(s.charAt(i))) {
+            if(!map.containsKey(s.charAt(i))) {
                 answer[i] = -1;
                 map.put(s.charAt(i), i);
             } else {
-                int before = map.get(s.charAt(i));
-                answer[i] = i - before;
+                int beforeIndex = map.get(s.charAt(i));
+                answer[i] = i - beforeIndex;
                 map.put(s.charAt(i), i);
             }
         }
@@ -39,10 +43,15 @@ public class CloseCharacter {
         return answer;
     }
 
+    public static int[] solution2(String s) {
+        int[] answer = new int[s.length()];
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i=0; i<s.length(); i++) {
+            char ch = s.charAt(i);
+            answer[i] = i - map.getOrDefault(ch, i+1);
+            map.put(ch, i);
+        }
 
-    public static void main(String[] args) {
-        CloseCharacter sol = new CloseCharacter();
-        String s = "banana";
-        System.out.println(Arrays.toString(sol.solution(s)));
+        return answer;
     }
 }
