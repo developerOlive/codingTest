@@ -8,28 +8,46 @@ import java.util.stream.Stream;
 public class HardDiskStatistics {
 
     /*
-    your computer's hard drive is almost full. In order to make some space, you need to compile some file statistics. You want to know how many bytes of memory each file type is consuming. Each file has a name, and the part of the name after the last dot is called the file extension, which identifies what type of file it is. We distinguish four broad types of file.
+    your computer's hard drive is almost full. In order to make some space, you need to compile some file statistics. 
+    You want to know how many bytes of memory each file type is consuming. 
+    Each file has a name, and the part of the name after the last dot is called the file extension, 
+    which identifies what type of file it is. We distinguish four broad types of file.
+    
     music (only extensions : mp3, aac, flac)
     image (only extensions: jpg, bmp, gif)
     movie (only extensions : mp4, avi, mkv)
     other (all other extensions; for example: 7z, txt, zip)
-    your receive string S, containing a list of all the files on your computer (each file appears on a separate line). Each line contains a file name and the file name and the file's size in bytes, separated by a space. For example, string S could look like :
+    
+    your receive string S, containing a list of all the files on your computer 
+    (each file appears on a separate line). 
+    Each line contains a file name and the file name and the file's size in bytes,
+    separated by a space. For example, string S could look like :
+    
     "my.song.mp3 11b
     greatSong.flac 1000b
     video.mp4 200b
     movie.mkv 10000b
     not3.txt 5b
-    game.exe 100b
+    game.exe 100b"
+    
     there are two music files (my.song.mp3 and greatSong.flac, of size 11 and 1000 bytes respectively).
     There are no images files.
     We have two movies files (video.mp4 and movie.mkv of size 200 and 10000 bytes.)
-    There are two files of other types (not3.txt and game.exe of size 5 and 100 bytes). In total there are 1011 bytes of music, 0 bytes of images, 10200 bytes of movies and 105 bytes of other files.
-    that, given string S describing the files on disk, returns a string containing four rows, describing music, images, movies and other file types respectively. Each row should consist of a file type and the number of bytes consumed by files of that type on the disk(use format "<<type>><<size>>b",where<<type>> is the files' type and <<size>> is the total file size of this group).
+    There are two files of other types (not3.txt and game.exe of size 5 and 100 bytes).
+    In total there are 1011 bytes of music, 0 bytes of images, 
+    10200 bytes of movies and 105 bytes of other files.
+    
+    that, given string S describing the files on disk,
+    returns a string containing four rows, describing music, images,  movies and other file types respectively. 
+    Each row should consist of a file type and the number of bytes consumed by files of 
+    that type on the disk(use format "<<type>><<size>>b",where<<type>> is the files' type and <<size>> is the total file size of this group).
+    
     For instance, give string S as shown above, your function should return:
+    
     "music 1011b
     images 0b
-    movies 10200b
-    other 105b"
+    movies 10200b"
+    
      */
 
     public static void main(String[] args) {
