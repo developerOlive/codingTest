@@ -25,7 +25,15 @@ public class KthElement {
     return : [5, 6, 3]
      */
 
-    public int[] solution(int[] array, int[][] commands) {
+    public static void main(String[] args) {
+        int[] array = {1, 5, 2, 6, 3, 7, 4};
+        int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+
+        System.out.println(Arrays.toString(solution1(array, commands)));
+    }
+
+    public static int[] solution1(int[] array, int[][] commands) {
+
         int[] answer = new int[commands.length];
 
         int index = 0;
@@ -38,7 +46,7 @@ public class KthElement {
             // public static int [] copyOfRange (int [] original_array, int from_index, int to_index)
             // original_array - 복사할 원본 배열 (arr)
             // from_index - 원본 배열에서 복사할 범위의 시작 인덱스
-            // to_index - 원본 배열에서 복사할 범위의 끝 인덱스
+            // to_index - 원본 배열에서 복사할 범위의 끝 인덱스
             int[] temp = Arrays.copyOfRange(array, i - 1, j);
 
             Arrays.sort(temp);
@@ -51,11 +59,13 @@ public class KthElement {
         return answer;
     }
 
-    public static void main(String[] args) {
-        KthElement sol = new KthElement();
-        int[] array = {1, 5, 2, 6, 3, 7, 4};
-        int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
-
-        System.out.println(Arrays.toString(sol.solution(array, commands)));
+    public static int[] solution2(int[] array, int[][] commands) {
+        return Arrays.stream(commands)
+                .mapToInt(command -> {
+                    int[] temp = Arrays.copyOfRange(array, command[0] - 1, command[1]);
+                    Arrays.sort(temp);
+                    return temp[command[2] - 1];
+                })
+                .toArray();
     }
 }
