@@ -28,18 +28,20 @@ public class LicenseKeyFormatting {
         int k = 4;
         System.out.println(solve(str, k));
     }
-
-    public static String solve(String str, int k) {
+    
+    
+    // time complexity : O(n)
+    public static String solution1(String str, int k) {
         // 1. - 지우기
-        String newStr = str.replace("-", "");
+        String newStr = str.replace("-", ""); // replace : O(n) - n은 문자열의 길이
 
         // 2. upper
-        newStr = newStr.toUpperCase();
+        newStr = newStr.toUpperCase(); // toUpperCase : O(n) - n은 문자열의 길이
 
         // 3. k개로 파싱하기, 그리고 - 넣기
         StringBuilder sb = new StringBuilder(newStr);
         int length = sb.length();
-        for (int i = k; i < length; i = i + k) {
+        for (int i = k; i < length; i = i + k) { //  O(길이/k)
             sb.insert(length - i, '-');
         }
         return sb.toString();
