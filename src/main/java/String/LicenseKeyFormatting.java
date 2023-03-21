@@ -26,7 +26,7 @@ public class LicenseKeyFormatting {
 //        String str = "8F3Z-2e-9-wabcdef";
         String str = "8F3Z-2e-9-w";
         int k = 4;
-        System.out.println(solve(str, k));
+        System.out.println(solution1(str, k));
     }
     
     

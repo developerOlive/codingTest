@@ -36,7 +36,7 @@ public class GetReportResult {
         String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
         int k = 2;
 
-        int[] result = getReportResult.solve_with_hash(id_list, report, k);
+        int[] result = solution(id_list, report, k);
         for (int i : result) {
             System.out.println(i + " ");
         }
