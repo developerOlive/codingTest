@@ -17,14 +17,15 @@ public class A로B만들기 {
         System.out.println(solution("allpe", "apple"));
     }
 
+    // 시간복잡도 : O(n log n)
     public static int solution(String before, String after) {
-        char[] beforeChar = before.toCharArray();
+        char[] beforeChar = before.toCharArray(); // O(n)
         char[] afterChar = after.toCharArray();
 
-        Arrays.sort(beforeChar);
+        Arrays.sort(beforeChar); // O(n log n)
         Arrays.sort(afterChar);
 
-        return new String(beforeChar).equals(new String(afterChar)) ? 1 : 0;
+        return new String(beforeChar).equals(new String(afterChar)) ? 1 : 0; // O(n)
     }
 
 }
