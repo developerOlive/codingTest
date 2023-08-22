@@ -1,15 +1,15 @@
 package programmers_level_2.BFS;
 
-import java.awt.*;
 import java.util.ArrayDeque;
+import java.util.Arrays;
 
-public class 게임맵최단거리 {
+public class 게임맵최단거리_풀이1 {
 
     /*
     (문제)
     https://school.programmers.co.kr/learn/courses/30/lessons/1844
 
-    BFS(너비 우선 탐색)를 푸는 포인트
+    - BFS(너비 우선 탐색)를 푸는 포인트
     1. 비어있는 큐, 방문배열, 최단거리(필요한 경우)를 만든다.
     2. 시작 정점을 큐에 넣고, 방문 배열에 방문했음을 저장한다.
     3. 큐에 데이터가 남아있을 때까지 아래 과정을 반복한다.
@@ -20,7 +20,6 @@ public class 게임맵최단거리 {
         (3) 필요한 경우, 해당 정점의 최단 거리에서 +1을 한 값을 -> 다음 정점의 최단 거리로 저장한다.
         (4) 큐에 정점을 넣으면서 해당 정점에 대해 방문했음을 저장한다. (중요!)
     */
-
     public static void main(String[] args) {
         int[][] maps = {
                 {1, 0, 1, 1, 1},
@@ -32,8 +31,8 @@ public class 게임맵최단거리 {
         System.out.println(solution(maps));
     }
 
-    private static final int[] rx = {0, 0, 1, -1};
-    private static final int[] ry = {1, -1, 0, 0};
+    private static final int[] rx = {-1, 1, 0, 0};
+    private static final int[] ry = {0, 0, -1, 1};
 
     private static class Node {
         int r;
@@ -54,9 +53,13 @@ public class 게임맵최단거리 {
         ArrayDeque<Node> queue = new ArrayDeque<>();
         // 방문 배열 생성
         boolean[][] visited = new boolean[N][M];
-        // 거리 배열 생성
+        // 시작 지점으로부터 해당 정점까지의 최단거리를 저장하는 배열
         int[][] dist = new int[N][M];
+        for (int i = 0; i < N; i++) {
+            Arrays.fill(dist[i], Integer.MAX_VALUE);
+        }
 
+        // 시작정점을 큐에 넣고, 방문 배열에 방문했음을 저장한다.
         queue.addLast(new Node(0, 0));
         visited[0][0] = true;
         dist[0][0] = 1;
@@ -83,9 +86,13 @@ public class 게임맵최단거리 {
                     continue;
                 }
 
-                if (!visited[nextCol][nextRow]) {
-                    visited[nextCol][nextRow] = true;
+                // 해당 정점을 아직 방문하지 않은 경우
+                if (!visited[nextRow][nextCol]) {
+                    // 해당 정점을 방문했다고 표시
+                    visited[nextRow][nextCol] = true;
+                    // 방문한 정점을 큐에 추가
                     queue.addLast(new Node(nextRow, nextCol));
+                    // 다음 정점까지의 최단거리를 현재 정점까지의 최단 거리에 +1 한 값으로 갱신
                     dist[nextRow][nextCol] = dist[now.r][now.c] + 1;
                 }
             }
