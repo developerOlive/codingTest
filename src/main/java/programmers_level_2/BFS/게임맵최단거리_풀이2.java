@@ -31,7 +31,12 @@ public class 게임맵최단거리_풀이2 {
 
     public static int solution(int[][] maps) {
         // 상, 하, 좌, 우 순서로 이동할 수 있는 좌표 변화
-        int[][] move = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        int[][] move = {
+                {0, 1},  // move[0]: {0, 1}  - 오른쪽으로 1칸 이동을 나타냅니다.
+                {0, -1}, // move[1]: {0, -1} - 왼쪽으로 1칸 이동을 나타냅니다.
+                {1, 0},  // move[2]: {1, 0}  - 아래쪽으로 1칸 이동을 나타냅니다.
+                {-1, 0}  // move[3]: {-1, 0} - 위쪽으로 1칸 이동을 나타냅니다.
+        };
 
         // 큐를 이용하여 탐색할 정점을 순서대로 처리하기 위해 큐 생성
         Queue<Node> queue = new LinkedList();
@@ -56,9 +61,11 @@ public class 게임맵최단거리_풀이2 {
             int nowCount = count[now.c][now.r];
 
             for (int i = 0; i < 4; i++) {
+                // move[i][0] : 행 방향의 이동 (위,아래) / move[i][1] : 열 방향의 이동 (좌,우)
                 Node nextNode = new Node(now.r + move[i][0], now.c + move[i][1]);
 
-                // 맵 밖으로 나갈때
+                // 다음 행의 좌표가 0보다 작은 경우 || 다음 열의 좌표가 0보다 작은 경우
+                // 다음 행 좌표가 맵의 행 길이와 같은 경우 || 다음 열 좌표가 맵의 열 길이와 같은 경우
                 if (nextNode.r < 0 || nextNode.c < 0 || nextNode.r == maps[0].length || nextNode.c == maps.length) {
                     continue;
                 }
