@@ -34,7 +34,7 @@ public class FunctionDevelopment {
             double remain = (100 - progresses[i]) / (double) speeds[i];
             int date = (int) Math.ceil(remain);
 
-            if (!q.isEmpty() && q.peek() < date) {
+            if (!q.isEmpty() && q.peek() < date) { // peek(): 스택의 가장 위에 있는 항목을 반환한다.
                 answerList.add(q.size());
                 q.clear();
             }
